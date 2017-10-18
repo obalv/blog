@@ -5,7 +5,7 @@ const PostRoutes: Routes = [
     { path: '', component: TimelineComponent },
     { path: ':type', component: ConcordanceComponent },
     { path: ':type/:id', component: PostComponent }
-]
+];
 
 @NgModule({
     imports: [
@@ -13,4 +13,4 @@ const PostRoutes: Routes = [
     ],
     exports: [RouterModule]
 })
-export class FeatureModule { }
+export class PostRoutingModule { }
