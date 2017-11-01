@@ -2,17 +2,18 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 
 import {AppRoutingModule} from './app-routing.module';
+import {SharedModule} from './shared/shared.module';
 
-import {ConcordanceComponent} from './post/concordance.component';
+import {AppComponent} from './app.component';
 
 @NgModule({
-  declarations: [ConcordanceComponent],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
   providers: [],
-  bootstrap: [ConcordanceComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule {
 }

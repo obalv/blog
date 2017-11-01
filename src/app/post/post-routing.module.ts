@@ -5,8 +5,8 @@ import {ConcordanceComponent} from './concordance.component';
 import {PostComponent} from './post.component';
 
 const PostRoutes: Routes = [
-  {path: '', component: ConcordanceComponent},
-  {path: ':id', component: PostComponent}
+  {path: 'posts', component: ConcordanceComponent},
+  {path: 'posts/:id', component: PostComponent}
 ];
 
 @NgModule({

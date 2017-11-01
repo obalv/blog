@@ -1,15 +1,15 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {Routes, RouterModule, PreloadAllModules} from '@angular/router';
 
 const rootRouter: Routes = [
-    { path: '', redirectTo: '/post', pathMatch: 'full' },
-    { path: 'post', loadChildren: 'app/post/post.module#PostModule' },
-    { path: 'dashboard', loadChildren: 'app/dashboard/dashboard.module#DashboarModule' },
-    { path: '**', loadChildren: 'app/error/error.module#ErrorModule' }
+  {path: '', redirectTo: '/posts', pathMatch: 'full'},
+  {path: 'dashboard', loadChildren: 'app/dashboard/dashboard.module#DashboarModule'},
+  {path: '**', loadChildren: 'app/error/error.module#ErrorModule'}
 ];
 
 @NgModule({
-    imports: [RouterModule.forRoot(rootRouter)],
-    exports: [RouterModule]
+  imports: [RouterModule.forRoot(rootRouter, {preloadingStrategy: PreloadAllModules})],
+  exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule {
+}
