@@ -1,11 +1,16 @@
-import { Injectable } from '@angular/core';
-import { Headers, Http } from '@angular/http';
+import {Injectable} from '@angular/core';
+import {HttpClient, HttpParams} from '@angular/common/http';
 
 import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class PostListService {
-    private headers = new Headers({ 'Content-Type': 'application/json' });
-    private postsUrl = '';
-    constructor(private http: Http) { }
+  constructor(private http: HttpClient) {
+  }
+
+  fetchPosts(bytime: boolean, bytype: string) {
+    let params = new HttpParams().set('time', bytime.toString());
+    params = params.append('type', bytype);
+    this.http.get('', {params: params});
+  }
 }

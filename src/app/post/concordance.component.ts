@@ -1,17 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
 
-import { PostListService } from './post-list.service';
+import {PostListService} from './post-list.service';
+
+import 'rxjs/add/operator/map';
 
 @Component({
-    selector: 'concordance',
-    templateUrl: './concordance.component.html';
+  selector: 'app-concordance',
+  templateUrl: './concordance.component.html'
 })
 export class ConcordanceComponent implements OnInit {
-    constructor(private postListService: PostListService) { }
 
-    ngOnInit(): void {
-        // Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-        // Add 'implements OnInit' to the class.
+  postlist: string[];
 
+  constructor(private postListService: PostListService, private router: Router) {
+  }
+
+  ngOnInit(): void {
+    if (this.router.url === '/') {
+      this.postListService.fetchPosts(true, undefined).subscribe(
+
+      )
     }
+  }
 }
