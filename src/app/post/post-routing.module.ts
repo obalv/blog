@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 
-import {ConcordanceComponent} from './concordance.component';
+import {ConcordanceComponent} from '../shared/concordance/concordance.component';
 import {PostComponent} from './post.component';
 
 const PostRoutes: Routes = [

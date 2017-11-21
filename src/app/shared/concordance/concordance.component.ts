@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 
-import {PostListService} from './post-list.service';
+import {PostListService} from '../post-list.service';
 
 import 'rxjs/add/operator/map';
 
