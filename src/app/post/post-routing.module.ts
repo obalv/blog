@@ -5,7 +5,7 @@ import {ConcordanceComponent} from '../shared/concordance/concordance.component'
 import {PostComponent} from './post.component';
 
 const PostRoutes: Routes = [
-  {path: 'posts', component: ConcordanceComponent},
+  {path: 'timeline', component: ConcordanceComponent},
   {path: 'posts/:id', component: PostComponent}
 ];
 

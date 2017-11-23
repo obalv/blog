@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 import {Routes, RouterModule, PreloadAllModules} from '@angular/router';
 
 const rootRouter: Routes = [
-  {path: '', redirectTo: '/posts', pathMatch: 'full'},
+  {path: '', redirectTo: '/timeline', pathMatch: 'full'},
   {path: 'dashboard', loadChildren: 'app/dashboard/dashboard.module#DashboarModule'},
   {path: '**', loadChildren: 'app/error/error.module#ErrorModule'}
 ];

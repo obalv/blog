@@ -1,26 +1,11 @@
-import {Component, OnInit} from '@angular/core';
-import {Router} from '@angular/router';
-
-import {PostListService} from '../post-list.service';
-
-import 'rxjs/add/operator/map';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-concordance',
-  templateUrl: './concordance.component.html'
+  templateUrl: './concordance.component.html',
+  styleUrls:['./concordance.component.css']
 })
-export class ConcordanceComponent implements OnInit {
-
-  postlist: string[];
-
-  constructor(private postListService: PostListService, private router: Router) {
-  }
-
-  ngOnInit(): void {
-    if (this.router.url === '/') {
-      this.postListService.fetchPosts(true, undefined).subscribe(
-
-      )
-    }
-  }
+export class ConcordanceComponent {
+  @Input() postlink;
+  @Input() type;
 }
