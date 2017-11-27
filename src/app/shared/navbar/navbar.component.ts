@@ -1,10 +1,15 @@
-import { Component, Input } from '@angular/core';
+import {Component, Input, Output, EventEmitter} from '@angular/core';
 
 @Component({
-    selector: 'app-nav-bar',
-    templateUrl: './navbar.component.html',
-    styleUrls: ['./navbar.component.css']
+  selector: 'app-navbar',
+  templateUrl: './navbar.component.html',
+  styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
-    @Input() concordancelink;
+  @Input() concordancelink: string;
+  @Output() pushNavSeg = new EventEmitter<string>();
+
+  getNavSeg(navseg: string) {
+    this.pushNavSeg.emit(navseg);
+  }
 }
