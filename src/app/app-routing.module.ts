@@ -1,10 +1,21 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule, PreloadAllModules} from '@angular/router';
+import {PostComponent} from './post/post.component';
+import {ConcordanceComponent} from './shared/concordance/concordance.component';
+import {TimelineComponent} from './post/timeline/timeline.component';
+import {DetailComponent} from './post/detail/detail.component';
 
 const rootRouter: Routes = [
-  {path: '', redirectTo: '/timeline', pathMatch: 'full'},
-  {path: 'dashboard', loadChildren: 'app/dashboard/dashboard.module#DashboarModule'},
-  {path: '**', loadChildren: 'app/error/error.module#ErrorModule'}
+  {
+    path: '',
+    component: PostComponent,
+    children: [
+      {path: '', component: TimelineComponent},
+      {path: ':type', component: ConcordanceComponent},
+      {path: ':type/:id', component: DetailComponent}]
+  },
+  {path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboarModule'},
+  {path: '**', loadChildren: './shared/error/error.module#ErrorModule'}
 ];
 
 @NgModule({

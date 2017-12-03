@@ -1,6 +1,6 @@
 <div>
   <ul>
-    <app-navbar ></app-navbar>
+    <app-navbar *ngFor="let link of navbarlist" (click)="getNavSeg(link)"></app-navbar>
   </ul>
   <router-outlet></router-outlet>
 </div>
