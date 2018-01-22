@@ -3,7 +3,7 @@ import {NgModule} from '@angular/core';
 import {PostComponent} from './post.component';
 import {SharedModule} from '../shared/shared.module';
 import {DetailComponent} from './detail/detail.component';
-import {FooterComponent} from './footer/footer.component';
+import {FooterComponent} from '../shared/footer/footer.component';
 
 import {PostService} from './post.service';
 
