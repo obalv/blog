@@ -1,6 +1,15 @@
-<div>
-  <li [routerLink]="['/',]">
-    <h1>{{postlink.title}}</h1>
-    <p>{{postlink.excerpt}}</p>
+<ul>
+  <li *ngFor="let fragment of router_fragments">
+    <span *ngIf="fragment.previousState;else concordance">
+      <a [routerLink]="['/',fragment.currentState]">{{fragment.currentState}}</a>
+    </span>
+    <ng-template #concordance>
+      <div>
+        <a [routerLink]="['/',fragment.previousState,'/',fragment.currentState]">
+          <h1>{{fragment.hasTitle}}</h1>
+          <p>{{fragment.hasExcerpt}}</p>
+        </a>
+      </div>
+    </ng-template>
   </li>
-</div>
+</ul>

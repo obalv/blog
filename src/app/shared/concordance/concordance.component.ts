@@ -1,6 +1,4 @@
-import {Component, Input, Output, EventEmitter} from '@angular/core';
-
-import {PostService} from '../../post/post.service';
+import {Component, Input} from '@angular/core';
 
 import {RouterFragment} from '../../helper/router_fragment_interface';
 

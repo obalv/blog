@@ -1,7 +1,7 @@
 export interface RouterFragment {
   currentState: string;
   previousState?: string;
-  hasTitle: string;
+  hasTitle?: string;
   hasExcerpt?: string;
   passId: number;
 }

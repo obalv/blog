@@ -7,19 +7,21 @@ import {FooterComponent} from './footer.component';
 describe('FooterComponent testing', () => {
   let comp: FooterComponent;
   let fixture: ComponentFixture<FooterComponent>;
-  let de: DebugElement;
+  let de_h: DebugElement;
+  let de_p: DebugElement;
   let el_h1: HTMLElement;
   let el_p: HTMLElement;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [FooterComponent],
-    });
+    }).compileComponents();
     fixture = TestBed.createComponent(FooterComponent);
     comp = fixture.componentInstance;
-    de = fixture.debugElement.queryAll(By.css('p'));
-    el_h1 = de[0].nativeElement;
-    el_p = de[1].nativeElement;
+    de_h = fixture.debugElement.query(By.css('h1'));
+    de_p = fixture.debugElement.query(By.css('p'));
+    el_h1 = de_h.nativeElement;
+    el_p = de_p.nativeElement;
   });
 
   it('should have h1', () => {
