@@ -8,5 +8,5 @@ import {RouterFragment} from '../../helper/router_fragment_interface';
   styleUrls: ['./concordance.component.css']
 })
 export class ConcordanceComponent {
-  @Input() router_fragments: RouterFragment[];
+  @Input() router_fragments: RouterFragment;
 }

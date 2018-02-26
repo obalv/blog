@@ -5,25 +5,25 @@ import {DebugElement} from '@angular/core';
 
 import {ConcordanceComponent} from './concordance.component';
 import {NavbarStub, ConcordanceStub} from '../../helper/concordance_stub';
+import {RouterFragment} from '../../helper/router_fragment_interface';
 
 describe('concordance testing', () => {
   let comp: ConcordanceComponent;
   let fixture: ComponentFixture<ConcordanceComponent>;
-  let de: DebugElement[];
+  let de: DebugElement;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       declarations: [ConcordanceComponent],
-    }).compileComponents();
+    });
     fixture = TestBed.createComponent(ConcordanceComponent);
     comp = fixture.componentInstance;
   });
 
   it('should be navbar if using NavbarStub', () => {
-    comp.router_fragments = NavbarStub;
+    comp.router_fragments = <RouterFragment>NavbarStub;
     fixture.detectChanges();
-    de = fixture.debugElement.queryAll(By.css('a'));
-    expect(de[0].nativeElement.textContent).toContain(NavbarStub[0].currentState);
-    expect(de[1].nativeElement.textContent).toContain(NavbarStub[1].currentState);
+    de = fixture.debugElement.query(By.css('a'));
+    expect(de.nativeElement.textContent).toContain(NavbarStub.currentState);
   });
 });

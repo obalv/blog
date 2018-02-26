@@ -1,13 +1,13 @@
 <ul>
-  <li *ngFor="let fragment of router_fragments">
-    <span *ngIf="fragment.previousState;else concordance">
-      <a [routerLink]="['/',fragment.currentState]">{{fragment.currentState}}</a>
-    </span>
+  <li>
+    <div *ngIf="router_fragments.previousState;else concordance">
+      <a [routerLink]="['/',router_fragments.currentState]">{{router_fragments.currentState}}</a>
+    </div>
     <ng-template #concordance>
       <div>
-        <a [routerLink]="['/',fragment.previousState,'/',fragment.currentState]">
-          <h1>{{fragment.hasTitle}}</h1>
-          <p>{{fragment.hasExcerpt}}</p>
+        <a [routerLink]="['/',router_fragments.previousState,'/',router_fragments.currentState]">
+          <h1>{{router_fragments.hasTitle}}</h1>
+          <p>{{router_fragments.hasExcerpt}}</p>
         </a>
       </div>
     </ng-template>
